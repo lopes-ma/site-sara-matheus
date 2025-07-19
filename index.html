@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara & Matheus - Nossa História de Amor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Tela inicial escura com nomes e seta -->
+    <section class="hero-section">
+        <div class="floating-hearts-container" id="floating-hearts"></div>
+        <div class="names-container">
+            <h1 class="names">Sara & Matheus</h1>
+        </div>
+        <div class="arrow-container">
+            <img src="images/seta.gif" alt="Rolar para baixo">
+        </div>
+    </section>
+
+    <!-- Seção de História do Casal -->
+    <section class="our-story-section">
+        <div class="our-story-content">
+            <h2 class="section-title">A Nossa História</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <p>
+                        Tudo começou em 7 de agosto de 2021, quando os nossos caminhos se cruzaram de uma forma inesperada. 
+                        O que parecia ser apenas mais um dia comum transformou-se no início de uma jornada maravilhosa que 
+                        continuamos a percorrer juntos. Cada momento partilhado desde então tem sido uma página preciosa 
+                        na história do nosso amor.
+                    </p>
+                    <p>
+                        Ao longo destes anos, construímos memórias que guardaremos para sempre nos nossos corações. 
+                        Desde os momentos de pura alegria até aos desafios que enfrentámos juntos, cada experiência 
+                        fortaleceu o laço especial que nos une. O nosso amor cresce a cada dia, como um jardim bem 
+                        cuidado que floresce com o tempo.
+                    </p>
+                    <p>
+                        Este site é uma celebração do nosso amor e uma forma de recordar todos os momentos especiais 
+                        que partilhámos. Que possamos continuar a escrever a nossa história, página a página, com a 
+                        mesma paixão e carinho que nos trouxe até aqui.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Citações Românticas -->
+    <section class="quotes-section">
+        <div class="quotes-content">
+            <div class="quote-container">
+                <p class="quote-text" id="quote-text">"O amor não se vê com os olhos mas com o coração."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de carrosséis -->
+    <section class="carousel-section">
+        <div class="carousel-section-content">
+            <!-- Carrossel 1: Momentos Especiais -->
+            <div class="carousel-container">
+                <h2 class="carousel-title">Nossos Momentos Especiais</h2>
+                <div class="carousel" id="carousel1">
+                    <div class="carousel-slide">
+                        <!-- As imagens serão inseridas via JavaScript -->
+                    </div>
+                    <button class="carousel-button carousel-button-prev">&#10094;</button>
+                    <button class="carousel-button carousel-button-next">&#10095;</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="carousel-links">
+        <div class="carousel-link-item">
+            <h2>Fotos Secretas</h2>
+            <button class="link">
+                <a href="fotos-secretas.html" target="_blank">
+                    <img src="images/fotos-zoadas/imagempv1.jpeg" alt="fotos privada" class="button-img">
+                </a>
+            </button>
+        </div>
+        <div class="carousel-link-item">
+            <h2>Sua História de Superação</h2>
+            <button class="link">
+                <a href="historia-superacao.html" target="_blank">
+                    <img src="images/fotos-historia/mendiga.png" alt="fotos privada" class="button-img">
+                </a>
+            </button>
+        </div>
+    </section>
+
+    <!-- Reprodutor de Música -->
+    <section class="music-player">
+        <div class="music-player-content">
+            <button class="music-button" id="music-button">
+                Tocar Nossa Música
+                <span class="music-icon">🔈</span>
+            </button>
+            <audio id="background-music" loop>
+                <source src="audio/Sorriso_de_gengiva.mp3" type="audio/mpeg">
+                O seu navegador não suporta o elemento de áudio.
+            </audio>
+        </div>
+    </section>
+
+    <!-- Rodapé com contador -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Tempo Juntos</h2>
+            <p>Desde 07/08/2021</p>
+            <div class="counter-container" id="counter-container">
+                <!-- O contador será inserido via JavaScript -->
+            </div>
+            <p class="footer-text">
+                Feito com <span class="heart">❤</span> para celebrar o nosso amor
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
