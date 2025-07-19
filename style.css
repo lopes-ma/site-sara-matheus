@@ -250,12 +250,12 @@ body {
 
 .carousel-button-prev {
   left: 20px;
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 .carousel-button-next {
   right: 20px;
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 /* Estilos para o reprodutor de música */
