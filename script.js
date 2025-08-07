@@ -42,10 +42,9 @@ const carouselImages = {
 
 // Citações românticas
 const romanticQuotes = [
-    "O amor não se vê com os olhos mas com o coração.",
-    "Cada momento contigo é um momento que vale a pena viver.",
-    "Tu és o sonho que eu não sabia que tinha.",
-    "Amar não é olhar um para o outro, é olhar juntos na mesma direção.",
+    "Se beleza fosse merda, você estaria toda cagada.",
+    "Cada momento contigo é um momento que vale a pena viver.", 
+    "Se você fosse um pum, eu não te soltava.",
     "Contigo, aprendi o verdadeiro significado do amor."
 ];
 
@@ -135,34 +134,39 @@ function initTimeCounter() {
     // Função para atualizar o contador
     function updateCounter() {
         const now = new Date();
-        const diff = now.getTime() - startDate.getTime();
-        
-        // Cálculo de tempo decorrido
-        const seconds = Math.floor(diff / 1000) % 60;
-        const minutes = Math.floor(diff / (1000 * 60)) % 60;
-        const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
-        
-        // Cálculo de dias, meses e anos
+
+        // --- Calcular anos, meses, dias ---
         let years = now.getFullYear() - startDate.getFullYear();
         let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+
         
         if (months < 0) {
             years--;
             months += 12;
         }
-        
-        // Cálculo de dias considerando meses e anos
-        const startDateCopy = new Date(startDate);
-        startDateCopy.setFullYear(now.getFullYear());
-        startDateCopy.setMonth(now.getMonth());
-        
-        let days = now.getDate() - startDateCopy.getDate();
         if (days < 0) {
-            const lastDayOfLastMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-            days += lastDayOfLastMonth;
+            months--;
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            // último dia do mês anterior
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate();
         }
-        
-        // Atualizar os valores no HTML
+        // --- Calcular horas, minutos e segundos ---
+        const diffMs = now - startDate;
+        const diffToday = now - new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            now.getDate()
+        );
+
+        const hours = Math.floor(diffToday / (1000 * 60 * 60)) % 24;
+        const minutes = Math.floor(diffToday / (1000 * 60)) % 60;
+        const seconds = Math.floor(diffToday / 1000) % 60;
+
         document.getElementById('years').textContent = years;
         document.getElementById('months').textContent = months;
         document.getElementById('days').textContent = days;
@@ -170,8 +174,7 @@ function initTimeCounter() {
         document.getElementById('minutes').textContent = minutes;
         document.getElementById('seconds').textContent = seconds;
     }
-    
-    // Atualizar o contador a cada segundo
+
     updateCounter();
     setInterval(updateCounter, 1000);
 }
@@ -236,12 +239,12 @@ function createFloatingHearts() {
 
 // Proteção por senha nos botões da section carousel-links
 function protectCarouselLinks() {
-  const password = '07082021';
+  const password = 'sassasissi';
   const links = document.querySelectorAll('.carousel-links button.link');
   links.forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
-      const userInput = prompt('Digite a senha para acessar este conteúdo:');
+      const userInput = prompt('Digite a senha. Dica: seu apelido');
       if (userInput === password) {
         // Acha o <a> dentro do botão e redireciona
         const a = btn.querySelector('a');
